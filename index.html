@@ -355,6 +355,278 @@
   </div>
 </div>
 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felcorp Quote Component - Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; color: #1a1a2e; line-height: 1.7; font-size: 16px; background: #f8f9fb; }
+
+  .page-header { background: linear-gradient(135deg, #0f1535, #1e2a5a); color: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; }
+  .page-header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .page-header p { font-size: 14px; color: #c0c8e0; line-height: 1.5; }
+
+  .element-section { background: #fff; border-radius: 12px; padding: 32px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .element-section h2 { font-size: 18px; color: #0f1535; margin-bottom: 4px; font-weight: 700; }
+  .element-meta { font-size: 12px; color: #7a84a6; margin-bottom: 20px; line-height: 1.5; }
+  .element-meta span { display: inline-block; background: #eef4ff; color: #2074ed; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 6px; }
+
+  .label { font-size: 12px; color: #7a84a6; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+  .code-toggle { margin-top: 20px; padding-top: 16px; border-top: 1px solid #e8e8ee; }
+  .code-toggle summary { font-size: 13px; color: #2074ed; cursor: pointer; font-weight: 600; }
+  .code-toggle pre { background: #1a1a2e; color: #e0e0e0; padding: 16px; border-radius: 8px; font-size: 12px; line-height: 1.6; overflow-x: auto; margin-top: 10px; white-space: pre-wrap; word-break: break-all; }
+
+  /* ============================================================
+     QUOTE CALLOUT COMPONENT
+     ============================================================ */
+  .quote-callout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #f5f7fa;
+    border-left: 4px solid #2074ed;
+    border-radius: 0 10px 10px 0;
+    padding: 28px 28px;
+    margin: 28px 0;
+  }
+  .quote-callout .quote-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid #e0e6f0;
+  }
+  .quote-callout .quote-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .quote-callout .quote-text {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a2a3e;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .quote-callout .quote-attribution {
+    font-size: 15px;
+    color: #0f1535;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .quote-callout .quote-attribution span {
+    font-weight: 400;
+    color: #5a6380;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Quote Callout Component</h1>
+  <p>New component for PDF security guides. Features circular headshot, blue left border, italic quote text and bold attribution. Designed to match the existing Felcorp element library palette.</p>
+</div>
+
+<!-- ============================================================
+     VARIATION A: Standard quote with photo
+     ============================================================ -->
+<div class="element-section">
+  <h2>Quote Callout - With Photo</h2>
+  <div class="element-meta">
+    <span>Up to 2 per guide</span>
+    <span>Embed block</span>
+    <span>Photo required</span>
+    Features circular headshot avatar alongside quote text and attribution.
+  </div>
+
+  <p class="label">Standard - Long Quote</p>
+  <div class="quote-callout" style="margin:0 0 24px 0;">
+    <img class="quote-avatar" src="https://cdn.prod.website-files.com/6721e220b29e99b983765e42/67c2b12b58b891b9a19a8e95_Tobias_Fellas.webp" alt="Tobias Fellas">
+    <div class="quote-content">
+      <div class="quote-text">The paraplanning queue is a black hole. Files go in, weeks vanish, and your advisors lose 40 to 60 hours a month just keeping up. Most firms we onboard recover those hours within the first quarter. That's not efficiency. That's escape velocity.</div>
+      <div class="quote-attribution">Tobias Fellas <span>- Founder & CEO, Felcorp Support</span></div>
+    </div>
+  </div>
+
+  <p class="label">Standard - Short Quote</p>
+  <div class="quote-callout" style="margin:0 0 24px 0;">
+    <img class="quote-avatar" src="https://cdn.prod.website-files.com/6721e220b29e99b983765e42/67c2b12b58b891b9a19a8e95_Tobias_Fellas.webp" alt="Tobias Fellas">
+    <div class="quote-content">
+      <div class="quote-text">Security is not a feature you bolt on after onboarding. It is the foundation everything else sits on.</div>
+      <div class="quote-attribution">Tobias Fellas <span>- Founder & CEO, Felcorp Support</span></div>
+    </div>
+  </div>
+
+  <p class="label">Security Guide Context - Financial Planning</p>
+  <div class="quote-callout" style="margin:0;">
+    <img class="quote-avatar" src="https://cdn.prod.website-files.com/6721e220b29e99b983765e42/67c2b12b58b891b9a19a8e95_Tobias_Fellas.webp" alt="Tobias Fellas">
+    <div class="quote-content">
+      <div class="quote-text">When a financial planning firm outsources, they are not just sharing tasks. They are sharing client trust. Every credential, every file transfer, every screen their team sees carries the weight of that trust. Our security framework exists because we understand what is actually at stake.</div>
+      <div class="quote-attribution">Tobias Fellas <span>- Founder & CEO, Felcorp Support</span></div>
+    </div>
+  </div>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;div data-rt-embed-type="true"&gt;&lt;style&gt;
+  .quote-callout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #f5f7fa;
+    border-left: 4px solid #2074ed;
+    border-radius: 0 10px 10px 0;
+    padding: 28px 28px;
+    margin: 28px 0;
+  }
+  .quote-callout .quote-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid #e0e6f0;
+  }
+  .quote-callout .quote-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .quote-callout .quote-text {
+    font-size: 17px;
+    font-style: italic;
+    color: #2a2a3e;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .quote-callout .quote-attribution {
+    font-size: 15px;
+    color: #0f1535;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .quote-callout .quote-attribution span {
+    font-weight: 400;
+    color: #5a6380;
+  }
+&lt;/style&gt;&lt;div class="quote-callout"&gt;&lt;img class="quote-avatar" src="{{AVATAR_URL}}" alt="{{AUTHOR_NAME}}"&gt;&lt;div class="quote-content"&gt;&lt;div class="quote-text"&gt;{{QUOTE_TEXT}}&lt;/div&gt;&lt;div class="quote-attribution"&gt;{{AUTHOR_NAME}} &lt;span&gt;- {{AUTHOR_TITLE}}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     COMPARISON WITH EXISTING BLOCKQUOTE
+     ============================================================ -->
+<div class="element-section">
+  <h2>Comparison: Existing Blockquote vs. New Quote Callout</h2>
+  <div class="element-meta">
+    Side-by-side to show when each component is appropriate.
+  </div>
+
+  <p class="label">Existing Template 5: Blockquote (text-only, native RTE)</p>
+  <blockquote style="border-left: 4px solid #2074ed; margin: 0 0 8px 0; padding: 16px 24px; background: #f5f7ff; border-radius: 0 8px 8px 0;"><em>"All risks can be satisfactorily mitigated. Asking the right questions, putting in the right procedures and having a clean, simple process is the key steps to reducing risk."</em></blockquote>
+  <blockquote style="border-left: 4px solid #2074ed; margin: 0 0 24px 0; padding: 4px 24px 16px; background: #f5f7ff; border-radius: 0 0 8px 0; font-size: 14px;"><a href="/our-team/tobias-fellas" style="color: #2074ed; text-decoration: underline;"><em>Tobias Fellas</em></a><em> | Founder & CEO, Felcorp Support</em></blockquote>
+
+  <p class="label">New: Quote Callout (with photo, embed block)</p>
+  <div class="quote-callout" style="margin:0;">
+    <img class="quote-avatar" src="https://cdn.prod.website-files.com/6721e220b29e99b983765e42/67c2b12b58b891b9a19a8e95_Tobias_Fellas.webp" alt="Tobias Fellas">
+    <div class="quote-content">
+      <div class="quote-text">All risks can be satisfactorily mitigated. Asking the right questions, putting in the right procedures and having a clean, simple process is the key steps to reducing risk.</div>
+      <div class="quote-attribution">Tobias Fellas <span>- Founder & CEO, Felcorp Support</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     USAGE RULES
+     ============================================================ -->
+<div class="element-section" style="background:linear-gradient(135deg, #0f1535, #1e2a5a); color:white;">
+  <h2 style="color:white; margin-bottom:16px;">Quote Callout - Component Rules</h2>
+  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <thead>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.2);">
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Element</th>
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Value</th>
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Changeable?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Outer wrapper</td>
+        <td style="padding:10px 12px; color:#c0c8e0;"><code style="color:#90b8f8;">data-rt-embed-type="true"</code></td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Style block</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Exact CSS as defined</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Container class</td>
+        <td style="padding:10px 12px; color:#c0c8e0;"><code style="color:#90b8f8;">.quote-callout</code></td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Background</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">#f5f7fa</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Border left</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">4px solid #2074ed</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Avatar size</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">72px x 72px, border-radius: 50%</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Avatar border</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">3px solid #e0e6f0</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Quote text style</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">17px, italic, #2a2a3e</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Attribution style</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">15px, bold #0f1535 + regular #5a6380</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">DO NOT ALTER</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Avatar URL</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Image src path</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">TEXT ONLY</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Quote text</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Content inside .quote-text</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">TEXT ONLY</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Author name</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Name before the span</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">TEXT ONLY</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; color:#fff;">Author title</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Content inside span</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">TEXT ONLY</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+
 <!-- ============================================================
      SUMMARY
      ============================================================ -->
