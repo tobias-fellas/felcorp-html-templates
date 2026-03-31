@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felcorp Locked HTML Elements - Visual Reference</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; color: #1a1a2e; line-height: 1.7; font-size: 16px; background: #f8f9fb; }
+
+  /* Page header */
+  .page-header { background: linear-gradient(135deg, #0f1535, #1e2a5a); color: white; padding: 32px; border-radius: 12px; margin-bottom: 40px; }
+  .page-header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .page-header p { font-size: 14px; color: #c0c8e0; line-height: 1.5; }
+
+  /* Element section wrapper */
+  .element-section { background: #fff; border-radius: 12px; padding: 32px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .element-section h2 { font-size: 18px; color: #0f1535; margin-bottom: 4px; font-weight: 700; }
+  .element-meta { font-size: 12px; color: #7a84a6; margin-bottom: 20px; line-height: 1.5; }
+  .element-meta span { display: inline-block; background: #eef4ff; color: #2074ed; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 6px; }
+
+  /* Divider between preview and code */
+  .code-toggle { margin-top: 20px; padding-top: 16px; border-top: 1px solid #e8e8ee; }
+  .code-toggle summary { font-size: 13px; color: #2074ed; cursor: pointer; font-weight: 600; }
+  .code-toggle pre { background: #1a1a2e; color: #e0e0e0; padding: 16px; border-radius: 8px; font-size: 12px; line-height: 1.6; overflow-x: auto; margin-top: 10px; white-space: pre-wrap; word-break: break-all; }
+
+  /* ============================================================
+     WEBFLOW CMS STYLES - These simulate the site-wide CSS
+     ============================================================ */
+
+  /* Message information blocks (Key Overview + Tip) */
+  .message.information {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: #eef4ff;
+    border-left: 4px solid #2074ed;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 0;
+  }
+  .message.information .regular-m { font-size: 15px; line-height: 1.65; }
+  .message.information .regular-m strong { color: #0f1535; }
+  .message.information .regular-m p { margin: 10px 0 8px; }
+  .message.information .regular-m ul { padding-left: 18px; margin-top: 4px; }
+  .message.information .regular-m ul li { margin-bottom: 5px; font-size: 15px; text-align: left; }
+  .icon-size-24 { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+
+  /* bpo-table */
+  .bpo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    table-layout: fixed;
+  }
+  .bpo-table th {
+    background: #f4f6f8;
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid #dfe3e8;
+    font-weight: 600;
+  }
+  .bpo-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eceff1;
+    vertical-align: top;
+  }
+  .bpo-table tr:nth-child(even) td {
+    background: #fafbfc;
+  }
+
+  /* Stat Callout */
+  .stat-callout {
+    background: linear-gradient(320deg, #000000 0%, #14152a 24%, #14152a 76%, #000000 100%);
+    border-radius: 10px;
+    padding: 32px 40px;
+    text-align: center;
+    margin: 28px 0;
+  }
+  .stat-callout .stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+  .stat-callout .stat-context {
+    font-size: 16px;
+    color: #c0c8e0;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .stat-callout .stat-subtext {
+    font-size: 13px;
+    color: #7a84a6;
+    margin-top: 8px;
+  }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 4px solid #2074ed;
+    margin: 0;
+    padding: 16px 24px;
+    background: #f5f7ff;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote + blockquote {
+    margin-top: 0;
+    border-top: none;
+    border-radius: 0 0 8px 0;
+    padding-top: 4px;
+    font-size: 14px;
+  }
+  blockquote em { color: #333; }
+  a { color: #2074ed; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Felcorp Locked HTML Elements</h1>
+  <p>Visual reference for all 5 locked element templates. These are the exact HTML patterns used across all Learn BPO articles. Only content inside the elements changes. Structure, classes, styles and icons are fixed.</p>
+</div>
+
+<!-- ============================================================
+     ELEMENT 1: KEY OVERVIEW
+     ============================================================ -->
+<div class="element-section">
+  <h2>1. Key Overview</h2>
+  <div class="element-meta">
+    <span>1 per article</span>
+    <span>Position: top</span>
+    <span>Embed block</span>
+    Wraps in <code>data-rt-embed-type</code> with its own <code>&lt;style&gt;</code> block.
+  </div>
+
+  <!-- LIVE PREVIEW -->
+  <div class="message information"><div class="regular-m"><strong>Key Points</strong><p>Business process outsourcing (BPO) enables organisations to offload functions to specialist providers, improving efficiency, scalability and focus on strategic priorities.</p><ul><li>BPO covers both back-office and front-office functions and can be delivered onshore, nearshore or offshore depending on business and regulatory needs</li><li>Modern BPO is a strategic capability, providing access to specialised talent and flexible operating capacity</li><li>The strongest BPO outcomes come from clear governance, defined SLAs and providers with proven industry expertise</li><li>Risks such as data security and quality control can be effectively mitigated with the right structure and oversight</li></ul></div></div>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;div data-rt-embed-type="true"&gt;&lt;style&gt;
+  .message ul,
+  .message li {
+    text-align: left;
+  }
+  .message ul {
+    padding-left: 18px;
+    margin-top: 4px;
+  }
+  .message .regular-m strong + p {
+    margin-top: 10px;
+  }
+&lt;/style&gt;&lt;div class="message information"&gt;&lt;div class="regular-m"&gt;&lt;strong&gt;Key Points&lt;/strong&gt;&lt;p&gt;
+      {{SUMMARY_PARAGRAPH}}
+    &lt;/p&gt;&lt;ul&gt;&lt;li&gt;{{BULLET_1}}&lt;/li&gt;&lt;li&gt;{{BULLET_2}}&lt;/li&gt;&lt;li&gt;{{BULLET_3}}&lt;/li&gt;&lt;li&gt;{{BULLET_4}}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     ELEMENT 2: TIP / MESSAGE OVERVIEW
+     ============================================================ -->
+<div class="element-section">
+  <h2>2. Tip / Message Overview</h2>
+  <div class="element-meta">
+    <span>Up to 2 per article</span>
+    <span>No embed wrapper</span>
+    <span>Standalone RTE</span>
+    Direct in the Rich Text Element. No <code>data-rt-embed-type</code> wrapper needed.
+  </div>
+
+  <!-- LIVE PREVIEW: Version A - with "Tip:" lead-in -->
+  <p style="font-size:12px; color:#7a84a6; margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Variation A: Tip lead-in</p>
+  <div class="message information"><svg aria-hidden="true" class="icon-size-24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.06.34.03.533.31.533.19 0 .48-.06.686-.246l-.08.41c-.29.34-.92.59-1.47.59-.7 0-1-.42-.8-1.31l.74-3.46c.06-.29.01-.4-.28-.47l-.45-.08.08-.38 2.29-.28zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#2074ed"/></svg><div class="regular-m"><strong>Tip:</strong> We always recommend you trial a BPO service before a formal commitment. There is simply no way you can be sure a provider will work for you without trialing their service first.</div></div>
+
+  <br>
+
+  <!-- LIVE PREVIEW: Version B - with "Important:" lead-in -->
+  <p style="font-size:12px; color:#7a84a6; margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Variation B: Important lead-in</p>
+  <div class="message information"><svg aria-hidden="true" class="icon-size-24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.06.34.03.533.31.533.19 0 .48-.06.686-.246l-.08.41c-.29.34-.92.59-1.47.59-.7 0-1-.42-.8-1.31l.74-3.46c.06-.29.01-.4-.28-.47l-.45-.08.08-.38 2.29-.28zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#2074ed"/></svg><div class="regular-m"><strong>Important:</strong> Not all KPIs should be SLAs. Turning every <a href="/learn-bpo/common-bpo-kpis-explained">KPI</a> into a contractual obligation makes the model brittle and increases escalation friction.</div></div>
+
+  <br>
+
+  <!-- LIVE PREVIEW: Version C - plain text, no lead-in -->
+  <p style="font-size:12px; color:#7a84a6; margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Variation C: Plain text (no lead-in)</p>
+  <div class="message information"><svg aria-hidden="true" class="icon-size-24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.06.34.03.533.31.533.19 0 .48-.06.686-.246l-.08.41c-.29.34-.92.59-1.47.59-.7 0-1-.42-.8-1.31l.74-3.46c.06-.29.01-.4-.28-.47l-.45-.08.08-.38 2.29-.28zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#2074ed"/></svg><div class="regular-m">At Felcorp Support, we do not have exit fees in our contract. However, we do have a minimum 3 month initial engagement period that adequately covers our up-front set up costs.</div></div>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;div class="message information"&gt;&lt;svg aria-hidden="true" class="icon-size-24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.06.34.03.533.31.533.19 0 .48-.06.686-.246l-.08.41c-.29.34-.92.59-1.47.59-.7 0-1-.42-.8-1.31l.74-3.46c.06-.29.01-.4-.28-.47l-.45-.08.08-.38 2.29-.28zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#2074ed"/&gt;&lt;/svg&gt;&lt;div class="regular-m"&gt;{{TIP_CONTENT}}&lt;/div&gt;&lt;/div&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     ELEMENT 3: TABLE (bpo-table)
+     ============================================================ -->
+<div class="element-section">
+  <h2>3. Table (bpo-table)</h2>
+  <div class="element-meta">
+    <span>1-2 per article</span>
+    <span>Embed block</span>
+    <span>Column widths adjustable</span>
+    Wraps in <code>data-rt-embed-type</code> with its own <code>&lt;style&gt;</code> block.
+  </div>
+
+  <!-- LIVE PREVIEW: 2-column table -->
+  <p style="font-size:12px; color:#7a84a6; margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">2-column layout (32% / 68%)</p>
+  <table class="bpo-table" style="margin-bottom:24px;">
+    <colgroup><col style="width:32%"><col style="width:68%"></colgroup>
+    <thead><tr><th>SLA Element</th><th>What it means in practice</th></tr></thead>
+    <tbody>
+      <tr><td>Service scope</td><td>Defines exactly what the provider is responsible for delivering.</td></tr>
+      <tr><td>Performance metrics</td><td>Sets measurable standards such as accuracy or turnaround time.</td></tr>
+      <tr><td>Measurement method</td><td>Explains how data will be tracked and validated.</td></tr>
+      <tr><td>Consequences</td><td>Describes what happens when SLAs are not met including credits or actions.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- LIVE PREVIEW: 3-column table -->
+  <p style="font-size:12px; color:#7a84a6; margin-bottom:8px; font-weight:600; text-transform:uppercase; letter-spacing:1px;">3-column layout (25% / 35% / 40%)</p>
+  <table class="bpo-table">
+    <colgroup><col style="width:25%"><col style="width:35%"><col style="width:40%"></colgroup>
+    <thead><tr><th>Dimension</th><th>What to Measure</th><th>Example Metric</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Quality</strong></td><td>Accuracy, compliance adherence, rework rate</td><td>Error rate below 2% after calibration</td></tr>
+      <tr><td><strong>Speed</strong></td><td>Turnaround time, SLA adherence</td><td>95% of tasks within agreed SLA window</td></tr>
+      <tr><td><strong>Cost</strong></td><td>Cost per unit vs. in-house baseline</td><td>Within 15% of in-house equivalent</td></tr>
+      <tr><td><strong>Satisfaction</strong></td><td>Stakeholder confidence, communication quality</td><td>Rating of 4/5 or above</td></tr>
+    </tbody>
+  </table>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;div data-rt-embed-type="true"&gt;&lt;style&gt;
+  .bpo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    table-layout: fixed;
+  }
+  .bpo-table th {
+    background: #f4f6f8;
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid #dfe3e8;
+    font-weight: 600;
+  }
+  .bpo-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eceff1;
+    vertical-align: top;
+  }
+  .bpo-table tr:nth-child(even) td {
+    background: #fafbfc;
+  }
+  .bpo-table th:nth-child(1),
+  .bpo-table td:nth-child(1) { width: 32%; }
+  .bpo-table th:nth-child(2),
+  .bpo-table td:nth-child(2) { width: 68%; }
+&lt;/style&gt;&lt;table class="bpo-table"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;{{HEADER_1}}&lt;/th&gt;&lt;th&gt;{{HEADER_2}}&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;{{CELL}}&lt;/td&gt;&lt;td&gt;{{CELL}}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     ELEMENT 4: STAT CALLOUT
+     ============================================================ -->
+<div class="element-section">
+  <h2>4. Stat Callout</h2>
+  <div class="element-meta">
+    <span>Up to 2 per article</span>
+    <span>Embed block</span>
+    <span>SEO indexable</span>
+    Wraps in <code>data-rt-embed-type</code> with its own <code>&lt;style&gt;</code> block. Class-locked. Text is crawlable by search engines.
+  </div>
+
+  <!-- LIVE PREVIEW -->
+  <div class="stat-callout" style="margin:0;">
+    <div class="stat-number">90%</div>
+    <div class="stat-context">of Felcorp engagements start with a structured trial</div>
+    <div class="stat-subtext">Over 80 trials refined to reduce friction and get to results faster</div>
+  </div>
+
+  <br>
+
+  <div class="stat-callout" style="margin:0;">
+    <div class="stat-number">80%+</div>
+    <div class="stat-context">of Felcorp trials convert to full production engagements</div>
+    <div class="stat-subtext">Tailored scope, dedicated teams and clear criteria drive that conversion rate</div>
+  </div>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;div data-rt-embed-type="true"&gt;&lt;style&gt;
+  .stat-callout {
+    background: linear-gradient(320deg, #000000 0%, #14152a 24%, #14152a 76%, #000000 100%);
+    border-radius: 10px;
+    padding: 32px 40px;
+    text-align: center;
+    margin: 28px 0;
+  }
+  .stat-callout .stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+  .stat-callout .stat-context {
+    font-size: 16px;
+    color: #c0c8e0;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .stat-callout .stat-subtext {
+    font-size: 13px;
+    color: #7a84a6;
+    margin-top: 8px;
+  }
+&lt;/style&gt;&lt;div class="stat-callout"&gt;&lt;div class="stat-number"&gt;{{STAT_NUMBER}}&lt;/div&gt;&lt;div class="stat-context"&gt;{{STAT_CONTEXT}}&lt;/div&gt;&lt;div class="stat-subtext"&gt;{{STAT_SUBTEXT}}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     ELEMENT 5: BLOCKQUOTE (E-E-A-T QUOTE)
+     ============================================================ -->
+<div class="element-section">
+  <h2>5. Blockquote (E-E-A-T Quote)</h2>
+  <div class="element-meta">
+    <span>Up to 2 per article</span>
+    <span>Native RTE</span>
+    <span>2 consecutive blockquotes</span>
+    Uses Webflow's built-in blockquote element. Always a pair: quote text + attribution.
+  </div>
+
+  <!-- LIVE PREVIEW -->
+  <blockquote><em>"All risks can be satisfactorily mitigated. Asking the right questions, putting in the right procedures and having a clean, simple process is the key steps to reducing risk. There's nothing inherently risky about BPO, it's simply how prepared you are for the engagement"</em></blockquote>
+  <blockquote><a href="/our-team/tobias-fellas"><em>Tobias Fellas</em></a><em> | Founder & CEO, Felcorp Support</em></blockquote>
+
+  <div class="code-toggle">
+    <details>
+      <summary>View HTML code</summary>
+      <pre>&lt;blockquote&gt;&lt;em&gt;"{{QUOTE_TEXT}}"&lt;/em&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;a href="/our-team/tobias-fellas"&gt;&lt;em&gt;Tobias Fellas&lt;/em&gt;&lt;/a&gt;&lt;em&gt; | Founder &amp; CEO, Felcorp Support&lt;/em&gt;&lt;/blockquote&gt;</pre>
+    </details>
+  </div>
+</div>
+
+<!-- ============================================================
+     SUMMARY
+     ============================================================ -->
+<div class="element-section" style="background:linear-gradient(135deg, #0f1535, #1e2a5a); color:white;">
+  <h2 style="color:white; margin-bottom:16px;">Element Summary</h2>
+  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <thead>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.2);">
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Element</th>
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Max per article</th>
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Implementation</th>
+        <th style="text-align:left; padding:10px 12px; color:#c0c8e0; font-weight:600;">Indexable?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Key Overview</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">1</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Embed block + style</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Yes</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Tip Message</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">2</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Standalone RTE</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Yes</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Table (bpo-table)</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">1-2</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Embed block + style</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Yes</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <td style="padding:10px 12px; color:#fff;">Stat Callout</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">2</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Embed block + style</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Yes</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; color:#fff;">Blockquote</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">2</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Native RTE blockquote</td>
+        <td style="padding:10px 12px; color:#c0c8e0;">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
